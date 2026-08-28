@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aariz Waqas Bank</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f5f5f5;
+            margin: 0;
+        }
+
+        header {
+            background: white;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .balance {
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        select, input, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #111827;
+            color: white;
+            cursor: pointer;
+        }
+
+        .demo {
+            color: #a16207;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>Aariz Waqas Bank</h2>
+    <div class="demo">
+        FICTIONAL DEMO BANK
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <p>Available Demo Balance</p>
+
+        <div class="balance" id="balance">
+            PKR 1,000,000
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Demo Transfer</h2>
+
+        <select id="bank">
+            <option>Nodbandughgh Bank</option>
+            <option>Emad Bank</option>
+            <option>Sadiq Bank</option>
+            <option>Aariz Waqas Bank</option>
+        </select>
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Enter amount"
+        >
+
+        <button onclick="transfer()">
+            Make Demo Transfer
+        </button>
+    </div>
+
+</div>
+
+<script>
+let balance = 1000000;
+
+function transfer() {
+
+    let amount = Number(
+        document.getElementById("amount").value
+    );
+
+    let bank = document.getElementById("bank").value;
+
+    if (amount <= 0) {
+        alert("Enter a valid amount.");
+        return;
+    }
+
+    if (amount > balance) {
+        alert("Insufficient demo balance.");
+        return;
+    }
+
+    balance = balance - amount;
+
+    document.getElementById("balance").innerText =
+        "PKR " + balance.toLocaleString();
+
+    alert(
+        "Demo transfer of PKR " +
+        amount.toLocaleString() +
+        " sent to " + bank
+    );
+}
+</script>
+
+</body>
+</html>
