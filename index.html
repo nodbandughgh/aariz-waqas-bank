@@ -1,134 +1,297 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Aariz Waqas Bank</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aariz Waqas Bank — Demo</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            background: #f5f5f5;
-            margin: 0;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        header {
-            background: white;
-            padding: 20px;
-            border-bottom: 1px solid #ddd;
-        }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #172033;
+}
 
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
-        }
+header {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            margin-bottom: 20px;
-        }
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
 
-        .balance {
-            font-size: 35px;
-            font-weight: bold;
-        }
+.demo {
+    background: #fff3cd;
+    color: #856404;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
 
-        select, input, button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
+.container {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
 
-        button {
-            background: #111827;
-            color: white;
-            cursor: pointer;
-        }
+.warning {
+    background: #fff8df;
+    border: 1px solid #ead48b;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
 
-        .demo {
-            color: #a16207;
-            font-weight: bold;
-        }
-    </style>
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+}
+
+.label {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.balance {
+    font-size: 38px;
+    font-weight: bold;
+    margin: 10px 0 25px;
+}
+
+.bank-card {
+    background: #172033;
+    color: white;
+    padding: 25px;
+    border-radius: 18px;
+    min-height: 190px;
+}
+
+.chip {
+    width: 45px;
+    height: 32px;
+    background: #ddd;
+    border-radius: 7px;
+    margin: 30px 0;
+}
+
+.card-number {
+    letter-spacing: 3px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    border-radius: 9px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+}
+
+button {
+    background: #172033;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #edf0f3;
+}
+
+.out {
+    color: #c24141;
+}
+
+footer {
+    text-align: center;
+    color: #777;
+    font-size: 12px;
+    padding: 30px;
+}
+
+@media (max-width: 750px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .balance {
+        font-size: 30px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <header>
-    <h2>Aariz Waqas Bank</h2>
-    <div class="demo">
-        FICTIONAL DEMO BANK
-    </div>
+    <div class="logo">Aariz Waqas Bank</div>
+    <div class="demo">FICTIONAL DEMO</div>
 </header>
 
 <div class="container">
 
-    <div class="card">
-        <p>Available Demo Balance</p>
-
-        <div class="balance" id="balance">
-            PKR 1,000,000
-        </div>
+    <div class="warning">
+        <strong>DEMO ONLY:</strong>
+        This is a fictional banking website. No real money,
+        bank accounts, cards, or financial services are connected.
     </div>
 
+    <div class="grid">
+
+        <div class="card">
+            <div class="label">Available Demo Balance</div>
+
+            <div class="balance" id="balance">
+                PKR 2,000,000,000
+            </div>
+
+            <div class="bank-card">
+                <strong>AWB • DEMO CARD</strong>
+
+                <div class="chip"></div>
+
+                <div class="card-number">
+                    0000 0000 0000 0000
+                </div>
+
+                <br>
+
+                <small>AARIZ WAQAS • DEMO</small>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Demo Transfer</h2>
+
+            <label class="label">Send to</label>
+
+            <select id="bank">
+                <option>Nodbandughgh Bank</option>
+                <option>Emad Bank</option>
+                <option>Sadiq Bank</option>
+                <option>Aariz Waqas Bank</option>
+            </select>
+
+            <br><br>
+
+            <label class="label">Amount (PKR)</label>
+
+            <input
+                id="amount"
+                type="number"
+                placeholder="Enter demo amount"
+            >
+
+            <button onclick="makeTransfer()">
+                Make Demo Transfer
+            </button>
+        </div>
+
+    </div>
+
+    <br>
+
     <div class="card">
-        <h2>Demo Transfer</h2>
+        <h2>Demo Transactions</h2>
 
-        <select id="bank">
-            <option>Nodbandughgh Bank</option>
-            <option>Emad Bank</option>
-            <option>Sadiq Bank</option>
-            <option>Aariz Waqas Bank</option>
-        </select>
-
-        <input
-            type="number"
-            id="amount"
-            placeholder="Enter amount"
-        >
-
-        <button onclick="transfer()">
-            Make Demo Transfer
-        </button>
+        <div id="transactions">
+            <div class="transaction">
+                <span>Opening demo balance</span>
+                <strong>+ PKR 2,000,000,000</strong>
+            </div>
+        </div>
     </div>
 
 </div>
 
+<footer>
+    Aariz Waqas Bank © 2026<br>
+    Fictional demonstration website — No real banking services
+</footer>
+
 <script>
-let balance = 1000000;
 
-function transfer() {
+let balance = 2000000000;
 
-    let amount = Number(
-        document.getElementById("amount").value
-    );
+function formatMoney(number) {
+    return "PKR " + number.toLocaleString("en-PK");
+}
 
-    let bank = document.getElementById("bank").value;
+function makeTransfer() {
 
-    if (amount <= 0) {
-        alert("Enter a valid amount.");
+    const amountInput = document.getElementById("amount");
+    const bank = document.getElementById("bank").value;
+
+    const amount = Number(amountInput.value);
+
+    if (!amount || amount <= 0) {
+        alert("Please enter a valid demo amount.");
         return;
     }
 
     if (amount > balance) {
-        alert("Insufficient demo balance.");
+        alert("Demo transfer declined: insufficient demo balance.");
         return;
     }
 
-    balance = balance - amount;
+    balance -= amount;
 
     document.getElementById("balance").innerText =
-        "PKR " + balance.toLocaleString();
+        formatMoney(balance);
+
+    const transaction = document.createElement("div");
+
+    transaction.className = "transaction";
+
+    transaction.innerHTML =
+        "<span>Demo transfer to " + bank + "</span>" +
+        "<strong class='out'>− " +
+        formatMoney(amount) +
+        "</strong>";
+
+    document
+        .getElementById("transactions")
+        .prepend(transaction);
+
+    amountInput.value = "";
 
     alert(
-        "Demo transfer of PKR " +
-        amount.toLocaleString() +
-        " sent to " + bank
+        "Demo transfer successful!\n\n" +
+        formatMoney(amount) +
+        "\nTo: " + bank
     );
 }
+
 </script>
 
 </body>
